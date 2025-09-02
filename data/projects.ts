@@ -1,21 +1,21 @@
-import EcommerceMainPage from "../assets/images/projects/MainPage_Ecommerce.png";
-import FlexiWallet from "../assets/images/projects/FlexiWallet.png";
+import EcommerceMainPage from "@/assets/images/projects/MainPage_Ecommerce.png";
+import FlexiWallet from "@/assets/images/projects/FlexiWallet.png";
 
-import PostBlog from "../assets/images/projects/PostBlog.png";
+import PostBlog from "@/assets/images/projects/PostBlog.png";
 
-import EntertainmentApp from "../assets/images/projects/Entertainment.png";
-import Markdown from "../assets/images/projects/Markdown.png";
-import TicTacToe from "../assets/images/projects/Tic-tac-toe.png";
-import Designo from "../assets/images/projects/designo.png";
-import ReactjsSvg from "../assets/icons/reactjs.svg";
-import ReduxSvg from "../assets/icons/redux.svg";
-import DjangoSvg from "../assets/icons/django.svg";
-import Nextdotjs from "../assets/icons/nextdotjs.svg";
-import TypeScript from "../assets/icons/typescript.svg";
-import TailwindCss from "../assets/icons/tailwindcss.svg";
-import DaisyUI from "../assets/icons/daisyui.svg";
-import ShadCn from "../assets/icons/shadcnui.svg";
-import JavaScript from "../assets/icons/javascript.svg";
+import EntertainmentApp from "@/assets/images/projects/Entertainment.png";
+import Markdown from "@/assets/images/projects/Markdown.png";
+import TicTacToe from "@/assets/images/projects/Tic-tac-toe.png";
+import Designo from "@/assets/images/projects/designo.png";
+import ReactjsSvg from "@/assets/icons/reactjs.svg";
+import ReduxSvg from "@/assets/icons/redux.svg";
+import DjangoSvg from "@/assets/icons/django.svg";
+import Nextdotjs from "@/assets/icons/nextdotjs.svg";
+import TypeScript from "@/assets/icons/typescript.svg";
+import TailwindCss from "@/assets/icons/tailwindcss.svg";
+import DaisyUI from "@/assets/icons/daisyui.svg";
+import ShadCn from "@/assets/icons/shadcnui.svg";
+import JavaScript from "@/assets/icons/javascript.svg";
 
 export const PROJECT_DATA = [
   {

@@ -71,7 +71,9 @@ const Timeline = ({ index, event, onComplete }: TimelineProps) => {
             custom={index + 1}
             onAnimationComplete={() => {
               setSecondAnimationComplete(true);
-              onComplete && onComplete();
+              if (onComplete) {
+                onComplete();
+              }
             }}
           />
         )}
@@ -85,7 +87,7 @@ const Timeline = ({ index, event, onComplete }: TimelineProps) => {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="text-xl font-bold"
+            className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold"
           >
             {event.title}
           </motion.h3>
@@ -94,7 +96,7 @@ const Timeline = ({ index, event, onComplete }: TimelineProps) => {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="text-slate-400"
+            className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-400"
           >
             {event.school}
           </motion.p>
@@ -103,7 +105,7 @@ const Timeline = ({ index, event, onComplete }: TimelineProps) => {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="text-slate-500"
+            className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-500"
           >
             {event.description}
           </motion.p>
