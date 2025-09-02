@@ -19,13 +19,13 @@ const About = () => {
 
   return (
     <>
-      <div className="text-2xl md:text-5xl lg:text-6xl w-full">
+      <div className="mt-36 text-2xl md:text-5xl lg:text-6xl w-full">
         <MultiDirectionSlide text1="Passion Fuels Purpose!" />
         <div className="text-xl md:text-3xl lg:text-4xl">
           <MultiDirectionSlide text2="Get To Know More" />
         </div>
 
-        <div className="flex justify-between items-center w-full ">
+        <div className="flex justify-between items-center w-full">
           <motion.div
             style={{ x: leftCardX }}
             className="hidden md:flex flex-1 max-w-[45%]"

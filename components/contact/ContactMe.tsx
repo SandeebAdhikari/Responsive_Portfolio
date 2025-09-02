@@ -10,7 +10,7 @@ const ContactMe = () => {
   const email = "sandeebadhikari@gmail.com";
 
   return (
-    <div className="flex flex-col md:px-56 md:flex-row w-full items-center  gap-8 md:gap-8 lg:gap-8 ">
+    <div className="flex flex-col md:px-56 md:flex-row w-full items-center gap-8">
       {/* Left side */}
       <div className="flex-1 flex justify-center md:justify-start">
         <FadeRight duration={1} whileInView={!isMobileDebounced}>

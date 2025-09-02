@@ -35,7 +35,7 @@ const Profile = () => {
         {secondGradualComplete && (
           <div className="mt-5 flex items-center justify-center">
             <motion.h1 variants={headTextAnimation} className="text-2xl">
-              Hi, I'm Sandeeb, I am{" "}
+              Hi, I&apos;m Sandeeb, I am{" "}
             </motion.h1>
             <h1 className="mx-2 text-slate-600">
               <RotateBetweenWords
