@@ -28,7 +28,7 @@ export default function SkillShowcase({ skills }: SkillShowcaseProps) {
           return (
             <AnimatePresence key={section.sectionName}>
               <div className="mt-4">
-                <span className=" font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center">
+                <span className=" font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl">
                   {section.sectionName}
                 </span>
                 <div className="mt-2 flex flex-wrap gap-4 text-lg">
