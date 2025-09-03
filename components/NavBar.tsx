@@ -27,7 +27,7 @@ const NavBar = () => {
     { src: Twitter, url: "https://twitter.com" },
   ];
   return (
-    <div className="flex flex-col items-center gap-2 md:flex-row md:justify-between md:items-center md:px-32 md:py-6">
+    <div className="flex flex-col items-center gap-2 md:flex-row md:justify-between md:items-center md:py-6 md:px-16">
       <motion.div
         variants={slideAnimation("down")}
         initial="initial"

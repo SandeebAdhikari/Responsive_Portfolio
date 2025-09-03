@@ -4,7 +4,7 @@ import { slideAnimation } from "@/components/animations/animation";
 
 const Footer = () => {
   return (
-    <div className="mt-[100px]  h-[150px] md:px-56">
+    <div className="mt-[100px]  h-[150px] md:px-16">
       <hr className="orange-200"></hr>
       <div className="flex mt-10 justify-between w-full text-xl font-semibold">
         <motion.h1
