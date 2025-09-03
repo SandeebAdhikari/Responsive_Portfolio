@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Sandeeb Adhikari",
   description: "Portfolio website.",
   icons: {
-    icon: "./assets/images/projects/logos/logo512.png",
+    icon: "/icons/logo512.png",
   },
 };
 
