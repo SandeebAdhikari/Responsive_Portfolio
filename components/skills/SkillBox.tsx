@@ -7,7 +7,7 @@ export type SkillBoxProps = {
 
 export default function SkillBox({ name, icon }: SkillBoxProps) {
   return (
-    <div className="flex w-max items-center gap-2 rounded-lg border border-orange-200 bg-white px-4 py-3 text-sm shadow-md dark:bg-gray-800">
+    <div className="flex w-max items-center gap-2 rounded-lg border border-orange-200 bg-white px-4 py-3 shadow-md dark:bg-gray-800 text-sm sm:text-base md:text-xl lg:text-2xl">
       {typeof icon === "string" ? (
         <Image
           src={icon}

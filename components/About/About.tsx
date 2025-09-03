@@ -19,9 +19,9 @@ const About = () => {
 
   return (
     <>
-      <div className="mt-36 text-2xl md:text-5xl lg:text-6xl w-full">
+      <div className="mt-36 text-3xl md:text-5xl lg:text-6xl w-full">
         <MultiDirectionSlide text1="Passion Fuels Purpose!" />
-        <div className="text-xl md:text-3xl lg:text-4xl">
+        <div className="text-xl p-2 md:text-3xl lg:text-4xl">
           <MultiDirectionSlide text2="Get To Know More" />
         </div>
 

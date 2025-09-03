@@ -20,7 +20,7 @@ export default function SkillShowcase({ skills }: SkillShowcaseProps) {
   return (
     <section className="overflow-hidden mt-[150px]">
       <div className="relative mx-auto max-w-7xl">
-        <h2 className="text-3xl text-center sm:text-3xl">
+        <h2 className="text-3xl sm:text-3xl md:text-5xl lg:text-6xl text-center">
           <BlurIn word="Skills" />
         </h2>
         {skills.map((section) => {
@@ -28,10 +28,10 @@ export default function SkillShowcase({ skills }: SkillShowcaseProps) {
           return (
             <AnimatePresence key={section.sectionName}>
               <div className="mt-4">
-                <span className=" font-bold text-xl text-center">
+                <span className=" font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center">
                   {section.sectionName}
                 </span>
-                <div className="mt-2 flex flex-wrap gap-4 text-lg ">
+                <div className="mt-2 flex flex-wrap gap-4 text-lg">
                   {section.skills.map((box, index) => {
                     console.log("Skill:", box);
                     return (
