@@ -6,7 +6,7 @@ interface AboutCardProps {
 const AboutCard: React.FC<AboutCardProps> = ({ description }) => {
   return (
     <div className="w-full rounded-3xl">
-      <p className="text-xl text-justify md:text-2xl lg:text-3xl">
+      <p className="text-sm text-justify md:text-base lg:text-xl">
         {description}
       </p>
     </div>
