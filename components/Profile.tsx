@@ -18,8 +18,8 @@ const Profile = () => {
   const [firstBottonComplete, setFirstBottonComplete] = useState(false);
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center gap-24 md:p-10 sm:mt-16 lg:px-12">
-      <div className=" text-2xl sm:text-3xl md:text-4xl lg:text-6xl">
+    <div className="flex flex-col md:flex-row items-center  justify-between sm:mt-16 sm:mx-8">
+      <div className=" text-2xl sm:text-3xl md:text-4xl lg:text-6xl ">
         <GradualSpacing
           text="Transforming Ideas Into"
           onComplete={() => setFirstGradualComplete(true)}
@@ -37,7 +37,7 @@ const Profile = () => {
             <motion.h1 variants={headTextAnimation} className="text-2xl">
               Hi, I&apos;m Sandeeb, I am{" "}
             </motion.h1>
-            <h1 className="mx-2 text-slate-600">
+            <div className="mx-2 text-slate-600">
               <RotateBetweenWords
                 words={[
                   "Full-Stack Developer",
@@ -45,7 +45,7 @@ const Profile = () => {
                   "OpenSource Contributor",
                 ]}
               />
-            </h1>
+            </div>
           </div>
         )}
         {secondGradualComplete && (
