@@ -35,7 +35,7 @@ const Education = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center p-8 mt-[150px]">
+    <div className="flex flex-col items-center p-8 mt-16">
       {/* Responsive heading */}
       <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center">
         <WavyText word="Education And Certification" />

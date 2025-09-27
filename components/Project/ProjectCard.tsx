@@ -13,7 +13,7 @@ interface ProjectCardProps {
   github: string;
 }
 
-const MotionImage = motion(Image);
+const MotionImage = motion.create(Image);
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   name,
@@ -63,7 +63,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         >
           Visit Project
         </a>
-        <a href={github} target="_blank" rel="noopener noreferrer">
+        <a
+          href={github}
+          target="_blank"
+          rel="noopener noreferrer"
+          title={`View ${name} on GitHub`}
+        >
           <Image
             src={GitHubImg}
             alt={`${name} GitHub`}

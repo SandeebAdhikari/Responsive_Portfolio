@@ -27,7 +27,7 @@ const NavBar = () => {
     { src: Twitter, url: "https://twitter.com" },
   ];
   return (
-    <div className="flex flex-col items-center gap-2 md:flex-row md:justify-between md:items-center md:py-6 md:px-16">
+    <div className="flex flex-col items-center gap-2 sm:flex-row sm:justify-between sm:items-center sm:py-6 sm:px-12">
       <motion.div
         variants={slideAnimation("down")}
         initial="initial"
@@ -69,7 +69,24 @@ const NavBar = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.2 }}
             >
-              <a href={icon.url} target="_blank" rel="noopener noreferrer">
+              <a
+                href={icon.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={`Visit my ${
+                  icon.url
+                    .replace("https://", "")
+                    .replace("www.", "")
+                    .split(".")[0]
+                    .charAt(0)
+                    .toUpperCase() +
+                  icon.url
+                    .replace("https://", "")
+                    .replace("www.", "")
+                    .split(".")[0]
+                    .slice(1)
+                } profile`}
+              >
                 <Image
                   src={icon.src}
                   alt={`icon-${index}`}

@@ -13,7 +13,7 @@ const Project = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
 
-  const handleLoop = () => {
+  const handleLoop = useCallback(() => {
     if (!isPaused) {
       if (currentIndex === PROJECT_DATA.length) {
         setIsResetting(true);
@@ -25,12 +25,12 @@ const Project = () => {
         setCurrentIndex((prevIndex) => prevIndex + 1);
       }
     }
-  };
+  }, [currentIndex, isPaused]);
 
   useEffect(() => {
     const interval = setInterval(handleLoop, 3000);
     return () => clearInterval(interval);
-  }, [currentIndex, isPaused]);
+  }, [currentIndex, isPaused, handleLoop]);
 
   const albertQuotes = [
     {
@@ -54,7 +54,7 @@ const Project = () => {
             exit="exit"
           >
             {quote.quote}{" "}
-            <motion.h1
+            <motion.p
               key={index}
               ref={ref}
               className="text-center font-bold text-2xl sm:text-3xl md:text-5xl lg:6xl"
@@ -64,7 +64,7 @@ const Project = () => {
               exit="exit"
             >
               - {quote.author}
-            </motion.h1>
+            </motion.p>
           </motion.h1>
         ))}
         <div
@@ -100,3 +100,17 @@ const Project = () => {
 };
 
 export default Project;
+function useCallback<T extends (...args: unknown[]) => unknown>(
+  callback: T,
+  deps: unknown[]
+): T {
+  const callbackRef = useRef<T>(callback);
+
+  useEffect(() => {
+    callbackRef.current = callback;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, deps);
+
+  // @ts-expect-error: TypeScript cannot infer the correct type for the returned callback function
+  return useRef((...args: unknown[]) => callbackRef.current(...args)).current;
+}

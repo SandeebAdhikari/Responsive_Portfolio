@@ -18,8 +18,8 @@ const Profile = () => {
   const [firstBottonComplete, setFirstBottonComplete] = useState(false);
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center gap-24 md:p-10 mt-16 lg:px-12">
-      <div className=" mt-[75px] text-2xl sm:text-3xl md:text-4xl lg:text-6xl">
+    <div className="flex flex-col md:flex-row items-center justify-center gap-24 md:p-10 sm:mt-16 lg:px-12">
+      <div className=" text-2xl sm:text-3xl md:text-4xl lg:text-6xl">
         <GradualSpacing
           text="Transforming Ideas Into"
           onComplete={() => setFirstGradualComplete(true)}

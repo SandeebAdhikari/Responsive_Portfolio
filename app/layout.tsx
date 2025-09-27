@@ -18,9 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body style={{ fontFamily: '"Courier New", Courier, monospace' }}>
-        {children}
-      </body>
+      <body className="courier-font">{children}</body>
     </html>
   );
 }

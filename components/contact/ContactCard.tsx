@@ -53,7 +53,16 @@ const ContactCard = ({ email }: ContactCardProps) => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.2 }}
           >
-            <a href={icon.url} target="_blank" rel="noopener noreferrer">
+            <a
+              href={icon.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={`Visit my ${icon.url
+                .replace(/^https?:\/\/(www\.)?/, "")
+                .split(".")[0]
+                .replace(/-/g, " ")
+                .replace(/\//g, "")} profile`}
+            >
               <Image
                 src={icon.src}
                 alt={`icon-${index}`}

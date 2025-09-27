@@ -18,11 +18,11 @@ export default function SkillShowcase({ skills }: SkillShowcaseProps) {
   const isMobileDebonced = useDebounceValue(isMobile, 600);
 
   return (
-    <section className="overflow-hidden mt-[150px]">
-      <div className="relative mx-auto max-w-7xl">
-        <h2 className="text-3xl sm:text-3xl md:text-5xl lg:text-6xl text-center">
+    <section className="overflow-hidden mt-24">
+      <div className="relative mx-auto sm:mx-6">
+        <div className="text-3xl sm:text-3xl md:text-5xl lg:text-6xl text-center">
           <BlurIn word="Skills" />
-        </h2>
+        </div>
         {skills.map((section) => {
           console.log("Section:", section);
           return (
