@@ -2,6 +2,7 @@ export const dynamic = "force-dynamic";
 
 import type { Metadata } from "next";
 import Script from "next/script";
+import BackGround from "../components/animations/ThreeDBackground";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -19,7 +20,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* Google tag (gtag.js) */}
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-G1PXHE3QBS"
         strategy="afterInteractive"
@@ -34,7 +34,13 @@ export default function RootLayout({
     `}
       </Script>
 
-      <body className="courier-font">{children}</body>
+      <body
+        suppressHydrationWarning
+        className="courier-font relative overflow-x-hidden"
+      >
+        <BackGround />
+        <div className="relative z-10">{children}</div>
+      </body>
     </html>
   );
 }
