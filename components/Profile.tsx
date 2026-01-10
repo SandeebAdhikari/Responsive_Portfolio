@@ -2,14 +2,12 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import {
-  fadeAnimation,
   headTextAnimation,
   slideAnimation,
 } from "@/components/animations/animation";
 import GradualSpacing from "@/components/animations/GradualSpacing";
 import RotateBetweenWords from "@/components/animations/RotateBetweenWords";
 
-import Profile_Pic from "@/assets/image/profile-pic.png";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
 const Profile = () => {
@@ -18,7 +16,7 @@ const Profile = () => {
   const [firstBottonComplete, setFirstBottonComplete] = useState(false);
 
   return (
-    <div className="flex flex-col md:flex-row items-center  justify-between sm:mt-16 sm:mx-8">
+    <div className="mt-16 items-center  justify-between sm:mt-16 sm:mx-8">
       <div className=" text-2xl sm:text-3xl md:text-4xl lg:text-6xl ">
         <GradualSpacing
           text="Transforming Ideas Into"
@@ -57,7 +55,7 @@ const Profile = () => {
               exit="exit"
               whileHover={{ scale: 1.1 }}
               onAnimationComplete={() => setFirstBottonComplete(true)}
-              className="w-36 flex mr-5 items-center h-12 px-5 border  rounded-xl gap-2"
+              className="w-36 flex mr-5 items-center h-12 px-5 border  rounded-xl gap-2 cursor-pointer"
               onClick={() =>
                 (window.location.href = "/SandeebAdhikari_Resume.pdf")
               }
@@ -68,36 +66,25 @@ const Profile = () => {
               <FaArrowUpRightFromSquare size={16} />
             </motion.button>
             {firstBottonComplete && (
-              <motion.button
+              <motion.a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=sandeebadhikari@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 variants={slideAnimation("up")}
                 initial="initial"
                 animate="animate"
                 exit="exit"
                 whileHover={{ scale: 1.1 }}
-                className="w-32 bg-orange-200  flex items-center h-12 px-5 hover:border rounded-xl"
-                onClick={() =>
-                  (window.location.href = "mailto:sandeebadhikari@gmail.com")
-                }
+                className="w-32 bg-orange-200 flex items-center h-12 px-5 hover:border rounded-xl cursor-pointer"
               >
                 <span className="ml-2 font-bold text-black text-lg">
                   <GradualSpacing text="Contact" />
                 </span>
-              </motion.button>
+              </motion.a>
             )}
           </div>
         )}
       </div>
-      {firstGradualComplete && (
-        <motion.img
-          variants={fadeAnimation}
-          initial="initial"
-          animate="animate"
-          exit="exit"
-          src={Profile_Pic.src}
-          alt="profile"
-          className="h-[400px] w-[350px] rounded-full hover:border border-spacing-0.5 border-orange-200"
-        />
-      )}
     </div>
   );
 };
