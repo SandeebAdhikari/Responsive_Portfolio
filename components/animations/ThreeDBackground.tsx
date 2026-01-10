@@ -1,6 +1,6 @@
 "use client";
 
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import { useEffect, useMemo, useRef } from "react";
 import { useScroll } from "framer-motion";
@@ -8,6 +8,7 @@ import * as THREE from "three";
 
 const Model = () => {
   const ref = useRef<THREE.Group>(null);
+  const { size } = useThree();
   const { scene } = useGLTF("/assets/icons/engineer_room1.glb");
   const { scrollYProgress } = useScroll();
   const lastScroll = useRef<number>(-1);
@@ -69,13 +70,20 @@ const Model = () => {
         (next as THREE.MeshStandardMaterial).color.set(
           color ? color : defaultColor
         );
+        if (mesh.name === doorName) {
+          const doorMat = next as THREE.MeshStandardMaterial;
+          doorMat.transparent = true;
+          doorMat.opacity = 0;
+          doorMat.colorWrite = false;
+          doorMat.depthWrite = true;
+        }
         return next;
       });
       mesh.material = Array.isArray(mesh.material)
         ? nextMaterials
         : nextMaterials[0];
       if (mesh.name === doorName) {
-        mesh.visible = false;
+        mesh.renderOrder = -1;
       }
     });
   }, [scene, colorMap, defaultColor]);
@@ -84,20 +92,36 @@ const Model = () => {
     if (!ref.current) return;
     const current = scrollYProgress.get();
     lastScroll.current = current;
-    autoRotation.current += delta * 0.15;
     const baseRotationY = -Math.PI / 6;
     const baseRotationX = Math.PI / 18;
-    ref.current.rotation.y =
-      baseRotationY + current * Math.PI * 2 + autoRotation.current;
+    ref.current.rotation.y = baseRotationY + current * Math.PI * 2;
     ref.current.rotation.x = baseRotationX + current * Math.PI * 0.3;
   });
 
-  return <primitive ref={ref} object={scene} scale={0.4} position={[0, 0.25, 0]} />;
+  const isSmall = size.width < 640;
+  const scale = isSmall ? 0.3 : 0.4;
+  const position = [0, 0, 0];
+
+  return (
+    <primitive
+      ref={ref}
+      object={scene}
+      scale={scale}
+      position={position as [number, number, number]}
+    />
+  );
 };
 
 const ThreeBackground = () => {
   return (
     <div className="fixed inset-0 -z-10 pointer-events-none flex items-center justify-center">
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(circle at 50% 45%, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.25) 35%, rgba(0,0,0,0.18) 70%, rgba(0,0,0,0.35) 100%)",
+        }}
+      />
       <Canvas
         className="h-full w-full"
         camera={{ position: [0, 0, 5], fov: 45 }}

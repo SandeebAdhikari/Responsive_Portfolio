@@ -75,7 +75,7 @@ const ContactCard = ({ email }: ContactCardProps) => {
           </motion.div>
         ))}
       </motion.div>
-      <div className="flex flex-col bg-black items-center gap-5 w-full">
+      <div className="flex flex-col sm:bg-black items-center gap-5 w-full">
         <motion.input
           variants={FADE_DOWN}
           type="text"
